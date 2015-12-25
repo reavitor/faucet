@@ -61,7 +61,9 @@ class install extends controller{
     protected function _setNewPass() {
         //now we can use framework
         $this->db = new DB\SQL($this->fw->get('DSN') , $this->fw->get('DB_USER') , $this->fw->get('DB_PASS'));        
-        $setting = $this->_load_model('settings')->load(["param = ?" , 'password']);    //object chain ;)
+        
+        $setting = $this->_load_model('settings');
+        $setting->load(["param = ?" , 'password']);
         
         $alphabet = str_split('qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890');
         $password = ''; 

@@ -27,8 +27,9 @@ class pages extends controller{
             }
         }
         $this->fw->set('files' , $files);
-        $pages = $this->pages->find();
-        $this->fw->set('pages' , $pages);
+        //not using pages in DB yet
+        //$pages = $this->pages->find();
+        //$this->fw->set('pages' , $pages);
     }//end function
     
     public function admin_edit(){
