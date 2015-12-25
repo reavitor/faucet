@@ -28,8 +28,7 @@
             <include if="{{ @SESSION.flash }}" href="elements/message.ctp" />
             <include href="{{ 'elements/' . @nav }}" />
             <include href="{{ @content }}" />
-            
-            {{ stripos(@PATH , '/admin')!==false && @SESSION.admin ? '' : @site_settings.pages_bottom_ad | raw }}
+
             </div>
         </main>
         <!-- nav class="HolyGrail-nav">nav</nav -->
