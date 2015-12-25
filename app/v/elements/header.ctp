@@ -1,0 +1,1 @@
+<header><h1>{{ @site_settings.site_name }} <small>{{ @site_settings.site_name_short }}</small></h1></header>

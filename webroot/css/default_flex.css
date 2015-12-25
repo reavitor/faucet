@@ -1,0 +1,71 @@
+        header{padding: 2em;}
+        footer{text-align: center;}
+        p{
+            margin: 1em 0;
+        }
+        
+        /*easy flexbox class for bootstrap*/
+        .row-flex{
+            margin-left: -15px;
+            margin-right: -15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* fix for bootstrap broke jquery show/hide */
+        .ohide{display: none;}
+        
+        .HolyGrail,
+        .HolyGrail-body
+        {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .HolyGrail-nav {
+          order: -1;
+        }
+ 
+        .navbar-bottom{
+            margin-bottom: 0px;
+        }
+
+        
+        .Aligner {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .Aligner-item {
+          max-width: 50%;
+        }
+
+        .Aligner-item--top {
+          align-self: flex-start;
+        }
+
+        .Aligner-item--bottom {
+          align-self: flex-end;
+        }        
+        
+
+        
+        
+        
+        @media (min-width: 768px) {
+          .HolyGrail-body {
+            margin: 1em 1em;
+            flex-direction: row;
+            flex: 1;
+            min-height: 100vh;
+          }
+          .HolyGrail-content {
+            width: 768px;
+            flex: 1;
+          }
+          .HolyGrail-nav, .HolyGrail-ads {
+            /* 12em is the width of the columns */
+            flex: 0 0 12em;
+          }
+        }

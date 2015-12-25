@@ -1,0 +1,19 @@
+# Enable rewrite engine and route requests to framework
+RewriteEngine On
+
+# Some servers require you to specify the `RewriteBase` directive
+# In such cases, it should be the path (relative to the document root)
+# containing this .htaccess file
+#
+RewriteBase /faucet
+
+#donot allow access to cache(tmp) dir - or ini files
+RewriteRule ^(tmp)\/|\.ini$ - [R=404]
+
+#make sure we get assets
+RewriteRule (js.*|css.*|img.*)$ webroot/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+#route the rest of requests to framework
+RewriteRule .* index.php [L]
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
