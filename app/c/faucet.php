@@ -41,7 +41,8 @@ class faucet extends controller{
                 $this->addresses->load(["address = ?" , $data['address']]);
                 //pr([$this->ips , $this->addresses]);
                 
-                if($this->ips->recent < $this->site_settings['timer'] || $this->addresses->recent < $this->site_settings['timer']){
+                if( ($this->ips->recent != '' && $this->ips->recent < $this->site_settings['timer']) || 
+                        ($this->addresses->recent != '' && $this->addresses->recent < $this->site_settings['timer']) ){
                     $time_left = $this->site_settings['timer'] - $this->ips->recent;
                     $this->fw->set('SESSION.flash' , ['type' => 'warning' , 'message' => "It appears your IP or address tried too soon.. please wait {$time_left} minutes..."]);
                     $this->fw->reroute("/faucet");   //redirect and bail
