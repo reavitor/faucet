@@ -14,6 +14,7 @@ RewriteRule ^(tmp)\/|\.ini$ - [R=404]
 RewriteRule (js.*|css.*|img.*)$ webroot/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 #route the rest of requests to framework
 RewriteRule .* index.php [L]
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

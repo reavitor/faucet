@@ -70,3 +70,4 @@ DB_PASS=    - your database password
 now go to site homepage / folder - installer will ask for database password to verify 
 
 some providers do not allow database user 'create database' privilege - if installer fails you will have to log into your cpanel and create database manually
+If you find a use for it and like it - you can help with the code on github - or send a donation so I can keep going - 1iEyvYvT1RkbZf7fMDtFzptcqBBqcgnWx
